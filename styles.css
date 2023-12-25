@@ -1,0 +1,78 @@
+body {
+    text-align: center;
+    margin-top: 50px;
+    background-color: #B57EDC; 
+	color: midnightblue;
+    font-family: 'Playfair Display', serif; 
+
+}
+
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    color: #6f3ce7; /* Rot */
+    text-align: center;
+    margin-top: 50px;
+}
+/* CSS */
+button {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#yes {
+    background-color: #EA4C89;
+    margin-left: -200px;
+
+}
+
+button:hover,
+button:focus {
+    background-color: #c0392b;
+}
+
+.container {
+    text-align: center;
+}
+
+#no {
+    position: absolute;
+    margin-left: 100px;
+}
+
+p    { 
+	background-color: #222;
+	color: #bbb;
+}
+
+#yesgif {
+    position: absolute;
+    margin-left: 500px;
+}
+
+
