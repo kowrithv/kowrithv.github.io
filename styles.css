@@ -2,53 +2,35 @@ body {
     text-align: center;
     margin-top: 50px;
     background-color: #B57EDC; 
-	color: midnightblue;
+    color: midnightblue;
     font-family: 'Playfair Display', serif; 
-
 }
-
 
 h2 {
     font-family: 'Pacifico', cursive;
-    color: #6f3ce7; /* Rot */
+    color: #6f3ce7; 
     text-align: center;
     margin-top: 50px;
 }
-/* CSS */
+
 button {
     background-color: #EA4C89;
     border-radius: 8px;
     border-style: none;
-    box-sizing: border-box;
     color: #FFFFFF;
     cursor: pointer;
     display: inline-block;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 500;
-    height: 40px;
     line-height: 20px;
-    list-style: none;
-    margin: 0;
-    outline: none;
-    padding: 10px 16px;
-    position: relative;
+    margin: 10px;
+    padding: 10px 20px;
     text-align: center;
-    text-decoration: none;
     transition: color 100ms;
-    vertical-align: baseline;
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-#yes {
-    background-color: #EA4C89;
-    margin-left: -200px;
-
 }
 
 button:hover,
@@ -61,19 +43,39 @@ button:focus {
 }
 
 #no {
-    position: absolute;
-    margin-left: 100px;
+    position: relative; /* Ändern von absolute zu relative für bessere Responsivität */
 }
 
-p    { 
-	background-color: #222;
-	color: #bbb;
+p { 
+    background-color: #222;
+    color: #bbb;
 }
 
 #yesgif {
-    position: absolute;
-    margin-left: 600px;
-    margin-top: 200px;
+    width: 80%; /* Responsivität für Bilder */
+    max-width: 500px; /* Maximale Größe des Bildes */
+    height: auto; /* Beibehalten des Seitenverhältnisses */
+    position: relative; /* Ändern von absolute zu relative für bessere Responsivität */
+    margin: 20px auto; /* Zentrieren des Bildes */
 }
 
+/* Responsives Design */
+@media (max-width: 600px) {
+    button {
+        width: 100%; /* Volle Breite für kleinere Geräte */
+        padding: 10px;
+        font-size: 16px;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
+    #yesgif {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    #no {
+        margin-left: 0;
+    }
+}
