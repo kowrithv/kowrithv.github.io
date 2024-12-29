@@ -1,138 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Einjähriges Jubiläum</title>
+    <title>EINLADUNG</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(to bottom, #fceabb, #f8b500);
-            color: #333;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        #content {
-            margin-top: 20%;
-            z-index: 2;
-            position: relative;
-        }
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-        button {
-            font-size: 1.2em;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-        }
-        button#yes {
-            background-color: #4CAF50;
-            color: white;
-        }
-        button#no {
-            background-color: #f44336;
-            color: white;
-        }
-        .gif img {
-            max-width: 100px;
-            margin-top: 20px;
-        }
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            transform: rotate(45deg);
-            animation: fall 5s infinite;
-        }
-        .heart::before, .heart::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            border-radius: 50%;
-            top: -10px;
-            left: 0;
-        }
-        .heart::after {
-            left: 10px;
-        }
-        @keyframes fall {
-            0% {
-                top: -10%;
-                left: calc(50% - 10px);
-                opacity: 1;
-            }
-            100% {
-                top: 110%;
-                left: calc(50% - 10px + 100px);
-                opacity: 0;
-            }
-        }
-        .heart-curtain {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-            pointer-events: none;
-        }
-        .heart-curtain .heart {
-            animation: fall 4s infinite ease-in-out;
-        }
-    </style>
 </head>
 <body>
-    <div class="heart-curtain" id="heart-curtain"></div>
     <div id="content">
-        <h2>Hey Saru 👋,<br>
-            glaubst du, es ist schon ein Jahr her? Wie wäre es, wenn wir unser Jubiläum feiern, vielleicht wieder bei Saravanaa Bhavan? Ich freue mich auf deine Antwort!
-        </h2>
+        <h2>Hey Saru 👋, 
+            <br> glaubst du, es ist schon ein Jahr her? Wie wäre es, wenn wir unser Jubiläum feiern, vielleicht wieder bei Anjappar? Ich freue mich auf deine Antwort!
+            </h2>
         <button id="yes">Ja, sehr gerne!</button>
-        <button id="no">Vielleicht lieber anders?</button>
+        <button id="no">Nein</button>
+        <script src="script.js"></script>
     </div>
-
+    
     <div class="gif">
         <!-- GIFs -->
         <img id="neutralgif" src="neutral.gif">
         <img id="yesgif" src="yes.gif" style="display: none;">
     </div>
-
-    <script>
-        document.getElementById("yes").addEventListener("click", () => {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-            document.getElementById("yesgif").style.display = "block";
-        });
-
-        document.getElementById("no").addEventListener("click", () => {
-            alert("Vielleicht können wir etwas anderes planen? Lass es mich wissen!");
-        });
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.top = Math.random() * -10 + "%";
-            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.getElementById('heart-curtain').appendChild(heart);
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-
-        setInterval(createHeart, 100);
-    </script>
 </body>
 </html>
