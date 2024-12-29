@@ -17,6 +17,8 @@
         }
         #content {
             margin-top: 20%;
+            z-index: 2;
+            position: relative;
         }
         h2 {
             font-size: 1.8em;
@@ -75,9 +77,21 @@
                 opacity: 0;
             }
         }
+        .heart-curtain {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .heart-curtain .heart {
+            animation: fall 4s infinite ease-in-out;
+        }
     </style>
 </head>
 <body>
+    <div class="heart-curtain" id="heart-curtain"></div>
     <div id="content">
         <h2>Hey Saru 👋,<br>
             glaubst du, es ist schon ein Jahr her? Wie wäre es, wenn wir unser Jubiläum feiern, vielleicht wieder bei Saravanaa Bhavan? Ich freue mich auf deine Antwort!
@@ -110,14 +124,15 @@
             const heart = document.createElement('div');
             heart.classList.add('heart');
             heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-            document.body.appendChild(heart);
+            heart.style.top = Math.random() * -10 + "%";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+            document.getElementById('heart-curtain').appendChild(heart);
             setTimeout(() => {
                 heart.remove();
             }, 5000);
         }
 
-        setInterval(createHeart, 300);
+        setInterval(createHeart, 100);
     </script>
 </body>
 </html>
