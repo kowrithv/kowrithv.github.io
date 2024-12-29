@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EINLADUNG</title>
+    <title>Einjähriges Jubiläum</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="utf-8">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #fceabb, #f8b500);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        #content {
+            margin-top: 20%;
+        }
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        button#yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button#no {
+            background-color: #f44336;
+            color: white;
+        }
+        .gif img {
+            max-width: 100px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <div id="content">
-        <h2>Hey Saru 👋, 
-            <br> hast du Lust, am Samstag (06.01.24) mit mir auszugehen, vielleicht zu Saravanaa Bhavan? Freue mich auf deine Antwort!
-            </h2>
+        <h2>Hey Saru 👋,<br>
+            glaubst du, es ist schon ein Jahr her? Wie wäre es, wenn wir unser Jubiläum feiern, vielleicht wieder bei Saravanaa Bhavan? Ich freue mich auf deine Antwort!
+        </h2>
         <button id="yes">Ja, sehr gerne!</button>
-        <button id="no">Nein</button>
-        <script src="script.js"></script>
+        <button id="no">Vielleicht lieber anders?</button>
     </div>
-    
+
     <div class="gif">
         <!-- GIFs -->
         <img id="neutralgif" src="neutral.gif">
         <img id="yesgif" src="yes.gif" style="display: none;">
     </div>
+
+    <script>
+        document.getElementById("yes").addEventListener("click", () => {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            document.getElementById("yesgif").style.display = "block";
+        });
+
+        document.getElementById("no").addEventListener("click", () => {
+            alert("Vielleicht können wir etwas anderes planen? Lass es mich wissen!");
+        });
+    </script>
 </body>
 </html>
