@@ -91,3 +91,11 @@ p {
     background-size: cover; /* Optional: Streckt das GIF über die ganze Seite */
     z-index: 0; /* Hinter dem Text */
 }
+
+#content {
+    position: relative;
+    z-index: 1; /* Über dem GIF */
+    text-align: center;
+    margin-top: 20%;
+    color: #333; /* Textfarbe, die gut lesbar ist */
+}
